@@ -14,13 +14,38 @@
   <h2 style="margin-top: 30px; text-align: center;">3D model</h2>
   <main>
     <div style="height: 600px;">
-      <model-viewer src="models/chair.glb"
-      ios-src="models/chair.usdz"
-      alt="A 3D model of an astronaut"
+      <model-viewer id="chair"
+      src="models/chair.glb"
+      ios-src="models/chair.usdz" 
+      alt="A 3D model of a chair"
       ar
+      ar-scale = 'fixed'
       auto-rotate
-      camera-controls style="text-align: center; height: 90%; width: 100%; margin-top: 20px;">
+      camera-controls 
+      style="text-align: center; height: 90%; width: 100%; margin-top: 20px;">
+      <div style="bottom: 5px; left: 5px; position: absolute;"> Size: 
+        <select id="size-variant">
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+      </div>
       </model-viewer>
+      <script>
+        const modelViewerTransform = document.querySelector("model-viewer#chair");
+        const updateScale = async (event) => {
+          if (event.target.value == "Medium") {
+            modelViewerTransform.scale = `1.2 1.2 1.2`;
+          } else {
+            modelViewerTransform.scale = `1.5 1.5 1.5`;
+          }
+          modelViewerTransform.updateFraming()
+        };
+        
+        document.querySelector('#size-variant').addEventListener('input', (event) => {
+            updateScale(event);
+        });
+      </script>
+
     </div>
   </main>
 </body>
