@@ -527,7 +527,7 @@ img{
     border-radius: var(--bd-radius);
     box-sizing: border-box;
 }
-/* #product__quantity{
+#product__quantity{
     position: relative;
     padding: 1em .8em;
     max-width: 35%;
@@ -552,7 +552,7 @@ img{
     font-weight: 700;
     border: none;
     border-radius: var(--bd-radius);
-} */
+}
 .cart-form__add-btn .icon-cart{
     min-width: 18px;
     min-height: 18px;
@@ -684,10 +684,10 @@ img{
         margin-bottom: 0;
         width: 40%;
     }
-    /* #product__quantity{
+    #product__quantity{
         padding: 1em 0;
         max-width: 10%;
-    } */
+    }
     .cart-form__add-btn{ width: 57%; }
     .qr-code {
         display: flex;
