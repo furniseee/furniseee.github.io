@@ -11,6 +11,8 @@
     --black-clr: hsl(0, 0%, 0%);
 }
 
+
+
 .qr-code{
     display: none;
     float: right;
@@ -139,6 +141,44 @@ img{
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 1000px) {
+    .top-header__center {
+      display: none; /* Hide the center content on small screens */
+    }
+  
+    .menu-toggle {
+      display: block; /* Show the menu toggle button on small screens */
+    }
+  
+    .menu {
+      display: none; /* Initially hide the menu on small screens */
+    }
+  }
+
+  
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #333; Replace with your background color */
+    color: white; /* Replace with your text color */
+  }
+  
+  .top-header__center {
+    display: flex;
+    gap: 20px; /* Adjust the spacing between items */
+  }
+  
+  .menu-toggle {
+    display: none; /* Hide the menu toggle button on desktop */
+  }
+  
+  .menu {
+    display: none; /* Hide the menu on desktop */
+  }
+
+  
 .top-header__left{ padding-left: .5em; }
 .top-header__right{ padding-right: .5em; }
 
