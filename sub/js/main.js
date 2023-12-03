@@ -109,7 +109,7 @@ const mainJs = (
     }
     function manageFormClicks(event){
       let element = event.target
-      if(!element.matches(`.cart-form, .cart-form__input-container`)){
+      if(!element.matches(`.cart-form, #product__quantity, .cart-form__input-container`)){
         if(element.matches(`.icon-cart, .cart-form__add-btn`)){
           const notValidEntries = ['+', '-', 'e']
           let validFlag = true
