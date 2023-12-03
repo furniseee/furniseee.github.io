@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Diego Luiz">
-  <meta name="description"
-    content="A responsive, mobile first e-commerce product page built according to the challenge by Frontend Mentor, using HTML, CSS and Javascript">
-  <meta name="keywords"
-    content="html, css, javascript, e-commerce, product, page, challenge, frontend mentor, frontend, web developer, responsive, mobile first">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <meta name="description" content="A responsive, mobile first e-commerce product page built according to the challenge by Frontend Mentor, using HTML, CSS and Javascript">
+  <meta name="keywords" content="html, css, javascript, e-commerce, product, page, challenge, frontend mentor, frontend, web developer, responsive, mobile first">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="sub/css/normalize.css">
   <link rel="stylesheet" href="sub/css/main.css">
   <script src="sub/js/products.js"></script>
@@ -17,38 +14,43 @@
   <script src="sub/js/focusable-lightbox.js"></script>
   <script src="sub/js/main.js" defer></script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <title>PRODUCT</title>
+  <title>Furnisee</title>
 </head>
-
 <body>
   <header class="top-header">
     <div class="top-header__left">
       <button class="nav-btn" type="button" aria-controls="main-nav" aria-expanded="false">
         <span class="sr-only">Menu button</span>
-        <img src="images/icon-menu.svg" alt="" role="presentation">
+        <img src="sub/images/icon-menu.svg" alt="" role="presentation">
       </button>
       <h1 class="logo">
-        <a style="text-decoration:none" href="../../index.html" class="invisible" tabindex="0">FURNISEE</a>
+        <a href="index.html" class="invisible" tabindex="0" >furnisee</a>
       </h1>
-      <nav class="main-nav" id="main-nav" aria-label="Main menu">
-        <div class="main-nav__content-container">
-          <button class="main-nav__close-btn" type="button">
-            <span class="sr-only">Close menu</span>
-            <span class="icon icon-close" aria-hidden="true"></span>
-          </button>
-          <ul class="main-nav__links">
-            <li>
-              <a href="../product.html" class="nav-item">PRODUCTS</a>
-            </li>
-            <li>
-              <a href="../blog.html" class="nav-item">BLOG</a>
-            </li>
-            <li>
-              <a href="../createmodel.html" class="nav-item">CREATE 3D MODELS</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+        <nav class="main-nav" id="main-nav" aria-label="Main menu">
+          <div class="main-nav__content-container">
+            <button class="main-nav__close-btn" type="button">
+              <span class="sr-only">Close menu</span>
+              <span class="icon icon-close" aria-hidden="true"></span>
+            </button>
+            <ul class="main-nav__links">
+              <li>
+                <a href="#" class="nav-item">Collections</a>
+              </li>
+              <li>
+                <a href="#" class="nav-item">Men</a>
+              </li>
+              <li>
+                <a href="#" class="nav-item">Women</a>
+              </li>
+              <li>
+                <a href="#" class="nav-item">About</a>
+              </li>
+              <li>
+                <a href="#" class="nav-item">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
     </div>
     <div class="top-header__right">
       <button class="top-header__btn-cart" type="button" aria-controls="cart-section" aria-expanded="false">
@@ -79,7 +81,7 @@
         <button type="button" class="product__slider___btn-close-lightbox">
           <span class="sr-only">Close lightbox</span>
           <span class="icon icon-close" aria-hidden="true"></span>
-        </button>
+        </button>  
         <div class="image-box" aria-label="Product preview" role="region">
           <button type="button" class="btn-previousImage">
             <span class="sr-only">Previous Image</span>
@@ -89,10 +91,9 @@
             <span class="sr-only">Next Image</span>
             <span class="icon icon-next" aria-hidden="true"></span>
           </button>
-          <img src="sub/images/chair/chair-1.jpg" alt="Brown and white sneaker" class="image-box__src"
-            data-product-id="item-cart-1" tabindex="0" aria-controls="lightbox" aria-expanded="false">
+          <img src="sub/images/chair/chair-1.jpg" alt="Brown and white sneaker" class="image-box__src" data-product-id="item-cart-1" tabindex="0" aria-controls="lightbox" aria-expanded="false">
         </div>
-
+        
         <ul class="product__thumbs default-container" aria-label="Product thumbnails">
           <li class="thumb-item">
             <button type="button" class="thumb-item__btn" aria-label="change to image 1">
@@ -128,7 +129,6 @@
             class="model"> <img src="sub/images/qr-code.png" class="qr-code"> 
             <div style="bottom: 5px; left: 5px; position: absolute;"> Size: 
               <select id="size-variant">
-                <option>Original</option>
                 <option>Medium</option>
                 <option>Large</option>
               </select>
@@ -137,11 +137,9 @@
           <script>
             const modelViewerTransform = document.querySelector("model-viewer#chair");
             const updateScale = async (event) => {
-              if (event.target.value == "Original") {
-                modelViewerTransform.scale = `0.8 0.8 0.8`;
-              } else if (event.target.value == "Medium") {
+              if (event.target.value == "Medium") {
                 modelViewerTransform.scale = `1.2 1.2 1.2`;
-              } else if (event.target.value == "Large") {
+              } else {
                 modelViewerTransform.scale = `1.5 1.5 1.5`;
               }
               modelViewerTransform.updateFraming()
@@ -151,18 +149,17 @@
                 updateScale(event);
             });
           </script>
-
+          
         </div>
       </section>
       <section class="product__content default-container" aria-label="Product content">
         <header>
-          <h2 class="company-name" tabindex="0">HoaPhat GROUP</h2>
+          <h2 class="company-name" tabindex="0">HoaPhat Company</h2>
           <p class="product__name" tabindex="0">Autumn Limited Edition Chair</p>
           <h3 class="product__title" tabindex="0">Chic Mesh Office Chair</h3>
         </header>
         <p class="product__description" tabindex="0">
-          The Chic Mesh Office Chair features a stylish design with elegantly curved lines. Every detail on this premium
-          office chair is carefully considered for maximum comfort and ease-of-use.
+          The Chic Mesh Office Chair features a stylish design with elegantly curved lines. Every detail on this premium office chair is carefully considered for maximum comfort and ease-of-use.
         </p>
         <div class="product__price">
           <div class="discount-price">
@@ -179,7 +176,7 @@
             </p>
           </div>
         </div>
-
+        
         <form action="#" class="cart-form">
           <div class="cart-form__input-container" aria-label="Define the product quantity">
             <button type="button" class="btn-changeValue minus-item">
@@ -201,21 +198,18 @@
         <br><br>
         <p>
           How to use AR view:
-          <li> Your phone must have the app installed <a
-              href="https://play.google.com/store/apps/details?id=com.google.ar.core" target="_blank"> Google Play
-              Services for AR</a> (Android).</li>
+          <li> Your phone must have the app installed <a href="https://play.google.com/store/apps/details?id=com.google.ar.core" target="_blank"> Google Play Services for AR</a> (Android).</li>
           <li>If you are using FURNISEE on desktop, please scan the QR code displayed next to the 3D model.</li>
 
         </p>
       </section>
 
       <section class="product__content default-container" aria-label="Product content">
-
+       
       </section>
     </article>
   </main>
-
+  
   <div class="lightbox" id="lightbox" role="dialog"></div>
 </body>
-
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Diego Luiz">
+  <meta name="description" content="A responsive, mobile first e-commerce product page built according to the challenge by Frontend Mentor, using HTML, CSS and Javascript">
+  <meta name="keywords" content="html, css, javascript, e-commerce, product, page, challenge, frontend mentor, frontend, web developer, responsive, mobile first">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png">
+  <link rel="stylesheet" href="sub/css/normalize.css">
+  <link rel="stylesheet" href="sub/css/main.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <title>Furnisee - AR view</title>
+</head>
+<body>
+  <h2 style="margin-top: 30px; text-align: center;">3D model</h2>
+  <main>
+    <div style="height: 600px;">
+      <model-viewer id="chair"
+      src="sub/models/chair.glb"
+      poster="sub/images/poster.png"
+      alt="A 3D model of a chair"
+      ar
+      ar-scale = 'fixed'
+      auto-rotate
+      camera-controls 
+      style="text-align: center; height: 90%; width: 100%; margin-top: 20px;">
+      <div style="bottom: 15px; left: 15px; position: absolute;"> Size: 
+        <select id="size-variant">
+          <option>Original</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+      </div>
+      </model-viewer>
+      <script>
+        const modelViewerTransform = document.querySelector("model-viewer#chair");
+        const updateScale = async (event) => {
+          if (event.target.value == "Original") {
+                modelViewerTransform.scale = `0.8 0.8 0.8`;
+              } else if (event.target.value == "Medium") {
+                modelViewerTransform.scale = `1.2 1.2 1.2`;
+              } else if (event.target.value == "Large") {
+                modelViewerTransform.scale = `1.5 1.5 1.5`;
+              }
+          modelViewerTransform.updateFraming()
+        };
+        
+        document.querySelector('#size-variant').addEventListener('input', (event) => {
+            updateScale(event);
+        });
+      </script>
+
+    </div>
+  </main>
+</body>
+</html>
