@@ -61,7 +61,7 @@
             flex-wrap: wrap;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 15px;
             width: 100%;
             /* Adjust as needed */
             margin-top: 0px;
@@ -92,15 +92,15 @@
             /* Center items vertically */
             align-items: center;
             /* Center items horizontally */
-            margin-bottom: 20px;
-            margin-top: 37%;
+            margin-bottom: 0px;
+            margin-top: 0%;
         }
 
         .generate-button {
             /* margin-button: 50%; */
             width: 100%;
             padding: 10px 20px;
-            cursor: pointer;   
+            cursor: pointer;
         }
 
         .custom-area {
@@ -127,8 +127,80 @@
 
         .model {
             width: 100%;
-            height: 500px;
+            height: 100%;
+            height: 509px;
         }
+
+        /* Button Styles */
+        /* Image Box Styles */
+        .image-box {
+            border: 3px solid #4CAF50;
+            /* Green border */
+            /* ... other styles ... */
+        }
+
+        /* Button Styles */
+        #upload-button,
+        #generate-button {
+            background-color: #4CAF50;
+            /* Green background */
+            border: 2px solid #367B35;
+            /* Slightly darker green border for depth */
+            color: white;
+            /* White text */
+            padding: 15px 32px;
+            /* Padding for size */
+            text-align: center;
+            /* Center the text */
+            text-decoration: none;
+            /* Remove underline from links */
+            display: inline-block;
+            /* Allow it to be next to other elements */
+            font-size: 16px;
+            /* Increase font size */
+            margin: 4px 2px;
+            /* Spacing around buttons */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition-duration: 0.4s;
+            /* Smooth transition for hover effect */
+            border-radius: 8px;
+            /* Rounded corners */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* Add shadow for depth */
+            outline: none;
+            /* Remove the outline */
+            font-weight: bold;
+            /* Make font bold */
+        }
+
+        /* Hover effect for buttons */
+        #upload-button:hover,
+        #generate-button:hover {
+            background-color: #45a049;
+            /* Darker green background on hover */
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            /* Larger shadow on hover */
+        }
+
+        /* Center the upload button */
+        .button-area {
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            width: 100%;
+            /* Take full width to center properly */
+            height: 100%;
+            margin-top: 60px;
+            margin-left: -17px;
+            /* Add some margin at the top */
+        }
+
+
+        /* Make sure to close your <style> tag after adding the above CSS */
+
 
         /* Responsive adjustments for smaller screens */
         @media (max-width: 768px) {
@@ -136,13 +208,20 @@
                 flex-direction: column;
             }
 
-            .image-grid,
+            .generate-button {
+                flex: 1;
+                grid-row: span;
+                width: 100%;
+                /* Make the button take up the entire width */
+                margin-top: 10px;
+                /* Adjust the top margin if needed */
+            }
+
             .model-preview {
                 width: 100%;
-                padding-left: 0;
-                /* Remove left padding on smaller screens */
-                margin-top: 20px;
-                /* Add top margin for separation on smaller screens */
+                height: 100%;
+                padding-left: 0px;
+                margin-top: 0px;
             }
 
             .button-area {
@@ -150,6 +229,8 @@
                 align-items: center;
             }
         }
+
+        
     </style>
 
 </head>
@@ -177,13 +258,13 @@
                         <ul class="navbar-nav  ">
                             <li class="nav-item">
                                 <a class="nav-link" href="product.html">Products</a>
-                              </li>
-                              <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="blog.html">Blog</a>
-                              </li>
-                              <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="createmodel.html">Create 3d models</a>
-                              </li>
+                            </li>
                     </div>
                     <div class="quote_btn-container">
                         <a href="">
