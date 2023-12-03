@@ -15,34 +15,31 @@
 <body>
   <h2 style="margin-top: 30px; text-align: center;">3D model</h2>
   <main>
-    <div style="height: 600px;">
-      <model-viewer id="chair"
-      src="sub/models/chair.glb"
-      poster="sub/images/poster.png"
-      alt="A 3D model of a chair"
-      ar
-      ar-scale = 'fixed'
-      auto-rotate
-      camera-controls 
-      style="text-align: center; height: 90%; width: 100%; margin-top: 20px;">
-      <div style="bottom: 15px; left: 15px; position: absolute;"> Size: 
-        <select id="size-variant">
-          <option>Original</option>
-          <option>Medium</option>
-          <option>Large</option>
-        </select>
-      </div>
+    <div style="width: 100%;">
+      <model-viewer id="chair"      
+          src="sub/models/chair.glb"
+          poster="sub/images/poster.png"
+          alt="A 3D model of a chair"
+          ar
+          ar-scale = 'fixed'
+          auto-rotate
+          camera-controls 
+        class="model"> <img src="sub/images/qr-code.png" class="qr-code"> 
+        <div style="bottom: 5px; left: 5px; position: absolute;"> Size: 
+          <select id="size-variant">
+            <option>Medium</option>
+            <option>Large</option>
+          </select>
+        </div>
       </model-viewer>
       <script>
         const modelViewerTransform = document.querySelector("model-viewer#chair");
         const updateScale = async (event) => {
-          if (event.target.value == "Original") {
-                modelViewerTransform.scale = `0.8 0.8 0.8`;
-              } else if (event.target.value == "Medium") {
-                modelViewerTransform.scale = `1.2 1.2 1.2`;
-              } else if (event.target.value == "Large") {
-                modelViewerTransform.scale = `1.5 1.5 1.5`;
-              }
+          if (event.target.value == "Medium") {
+            modelViewerTransform.scale = `1.2 1.2 1.2`;
+          } else {
+            modelViewerTransform.scale = `1.5 1.5 1.5`;
+          }
           modelViewerTransform.updateFraming()
         };
         
@@ -50,7 +47,7 @@
             updateScale(event);
         });
       </script>
-
+      
     </div>
   </main>
 </body>
