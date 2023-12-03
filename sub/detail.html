@@ -126,7 +126,7 @@
               auto-rotate
               camera-controls 
             class="model"> <img src="images/qr-code.png" class="qr-code"> 
-            <div style="bottom: 15px; left: 15px; position: absolute;"> Size: 
+            <div style="bottom: 5px; left: 5px; position: absolute;"> Size: 
               <select id="size-variant">
                 <option>Original</option>
                 <option>Medium</option>
@@ -141,7 +141,7 @@
                 modelViewerTransform.scale = `0.8 0.8 0.8`;
               } else if (event.target.value == "Medium") {
                 modelViewerTransform.scale = `1.2 1.2 1.2`;
-              } else {
+              } else if (event.target.value == "Large") {
                 modelViewerTransform.scale = `1.5 1.5 1.5`;
               }
               modelViewerTransform.updateFraming()

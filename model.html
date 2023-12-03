@@ -27,6 +27,7 @@
       style="text-align: center; height: 90%; width: 100%; margin-top: 20px;">
       <div style="bottom: 15px; left: 15px; position: absolute;"> Size: 
         <select id="size-variant">
+          <option>Original</option>
           <option>Medium</option>
           <option>Large</option>
         </select>
@@ -35,11 +36,13 @@
       <script>
         const modelViewerTransform = document.querySelector("model-viewer#chair");
         const updateScale = async (event) => {
-          if (event.target.value == "Medium") {
-            modelViewerTransform.scale = `1.2 1.2 1.2`;
-          } else {
-            modelViewerTransform.scale = `1.5 1.5 1.5`;
-          }
+          if (event.target.value == "Original") {
+                modelViewerTransform.scale = `0.8 0.8 0.8`;
+              } else if (event.target.value == "Medium") {
+                modelViewerTransform.scale = `1.2 1.2 1.2`;
+              } else if (event.target.value == "Large") {
+                modelViewerTransform.scale = `1.5 1.5 1.5`;
+              }
           modelViewerTransform.updateFraming()
         };
         
