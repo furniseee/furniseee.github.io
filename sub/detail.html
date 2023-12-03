@@ -117,9 +117,16 @@
         </ul>
 
         <div style="width: 100%;">
-          <model-viewer id="chair" src="models/chair.glb" poster="images/poster.png" alt="A 3D model of a chair" ar
-            ar-scale='fixed' auto-rotate camera-controls class="model"> <img src="images/qr-code.png" class="qr-code">
-            <div style="bottom: 15px; left: 15px; position: absolute;"> Size:
+          <model-viewer id="chair"      
+              src="models/chair.glb"
+              poster="images/poster.png"
+              alt="A 3D model of a chair"
+              ar
+              ar-scale = 'fixed'
+              auto-rotate
+              camera-controls 
+            class="model"> <img src="images/qr-code.png" class="qr-code"> 
+            <div style="bottom: 15px; left: 15px; position: absolute;"> Size: 
               <select id="size-variant">
                 <option>Original</option>
                 <option>Medium</option>
@@ -129,19 +136,20 @@
           </model-viewer>
           <script>
             const modelViewerTransform = document.querySelector("model-viewer#chair");
-
-            function updateScale(event) {
-              const selectedValue = event.target.value;
-              if (selectedValue === "Original") {
-                modelViewerTransform.scale = "0.3 0.3 0.3";
-              } else if (selectedValue === "Medium") {
-                modelViewerTransform.scale = "1.2 1.2 1.2";
-              } else if (selectedValue === "Large") {
-                modelViewerTransform.scale = "1.5 1.5 1.5";
+            const updateScale = async (event) => {
+              if (event.target.value == "Original") {
+                modelViewerTransform.scale = `0.3 0.3 0.3`;
+              } else if (event.target.value == "Medium") {
+                modelViewerTransform.scale = `1.2 1.2 1.2`;
+              } else {
+                modelViewerTransform.scale = `1.5 1.5 1.5`;
               }
-              modelViewerTransform.updateFraming();
-            }
+              modelViewerTransform.updateFraming()
+            };
             
+            document.querySelector('#size-variant').addEventListener('input', (event) => {
+                updateScale(event);
+            });
           </script>
 
         </div>
