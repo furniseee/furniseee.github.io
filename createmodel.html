@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Page Title -->
+    <title>Create A Model</title>
+
+    <!-- Model Viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- Fonts Style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Responsive Styles -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .big-div {
+            flex: 1;
+            /* Take up remaining space */
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+        }
+
+        .button-area {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 0px;
+        }
+
+        .content-container {
+            display: flex;
+            /* flex: 1;  */
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: 100%;
+            /* Adjust as needed */
+            margin-top: 0px;
+            /* Add top margin for separation */
+        }
+
+        .image-box {
+            border: 3px solid #ddd;
+            flex: 1;
+            /* Take up available space within the flex container */
+            height: 150px;
+            width: 150px;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .generate-button {
+            width: 100%;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .button-area {
+            display: flex;
+            flex-direction: column;
+            /* Adjust to column layout */
+            justify-content: center;
+            /* Center items vertically */
+            align-items: center;
+            /* Center items horizontally */
+            margin-bottom: 20px;
+            margin-top: 37%;
+        }
+
+        .generate-button {
+            /* margin-button: 50%; */
+            width: 100%;
+            padding: 10px 20px;
+            cursor: pointer;   
+        }
+
+        .custom-area {
+            display: flex;
+            flex-direction: column;
+            /* Adjust to column layout */
+            justify-content: center;
+            /* Center items vertically */
+            align-items: center;
+            /* Center items horizontally */
+            margin-bottom: 20px;
+            margin-top: 74%;
+        }
+
+        .model-preview {
+            margin-top: 20%;
+            width: 70%;
+            height: 70%;
+            /* flex: 1; */
+            /* Adjust the width of the model preview as needed */
+            /* padding-left: 0px; */
+            padding: 0px;
+        }
+
+        .model {
+            width: 100%;
+            height: 500px;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+            }
+
+            .image-grid,
+            .model-preview {
+                width: 100%;
+                padding-left: 0;
+                /* Remove left padding on smaller screens */
+                margin-top: 20px;
+                /* Add top margin for separation on smaller screens */
+            }
+
+            .button-area {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="sub_page">
+
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section long_section px-0">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="index.html">
+                    <span>
+                        FURNISEE
+                    </span>
+                </a>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class=""> </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+                        <ul class="navbar-nav  ">
+                            <li class="nav-item">
+                                <a class="nav-link" href="product.html">Products</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="blog.html">Blog</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="createmodel.html">Create 3d models</a>
+                              </li>
+                    </div>
+                    <div class="quote_btn-container">
+                        <a href="">
+                            <span>
+                                Login
+                            </span>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </a>
+                        <form class="form-inline">
+                            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="big-div">
+            <div class="button-area">
+                <button id="upload-button">Upload your images</button>
+            </div>
+            <div class="content-container">
+                <div class="image-grid">
+                    <div class="image-box" style="background-image: url('sub/images/chair/chair-1.jpg');"></div>
+                    <div class="image-box" style="background-image: url('sub/images/chair/chair-2.jpg');"></div>
+                    <div class="image-box" style="background-image: url('sub/images/chair/chair-3.jpg');"></div>
+                    <div class="image-box" style="background-image: url('sub/images/chair/chair-4.jpg');"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="big-div">
+            <div class="custom-area">
+                <button id="generate-button">Generate 3D model</button>
+            </div>
+        </div>
+
+        <div class="big-div">
+            <div class="model-preview">
+                <model-viewer src="sub/models/chair.glb" ios-src="sub/models/chair.usdz" alt="A 3D model of a chair" ar
+                    auto-rotate camera-controls class="model">
+                </model-viewer>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Rest of the body content goes here -->
+
+</body>
+
+</html>
