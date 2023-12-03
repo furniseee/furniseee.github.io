@@ -123,6 +123,7 @@
             class="model"> <img src="images/qr-code.png" class="qr-code"> 
             <div style="bottom: 15px; left: 15px; position: absolute;"> Size: 
               <select id="size-variant">
+                <option>Original</option>
                 <option>Medium</option>
                 <option>Large</option>
               </select>
@@ -131,7 +132,10 @@
           <script>
             const modelViewerTransform = document.querySelector("model-viewer#chair");
             const updateScale = async (event) => {
-              if (event.target.value == "Medium") {
+              if (event.target.value == "Original") {
+                modelViewerTransform.scale = `0.7 0.7 0.7`;
+              }
+              else if (event.target.value == "Medium") {
                 modelViewerTransform.scale = `1.2 1.2 1.2`;
               } else {
                 modelViewerTransform.scale = `1.5 1.5 1.5`;
