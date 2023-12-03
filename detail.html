@@ -9,13 +9,13 @@
     content="A responsive, mobile first e-commerce product page built according to the challenge by Frontend Mentor, using HTML, CSS and Javascript">
   <meta name="keywords"
     content="html, css, javascript, e-commerce, product, page, challenge, frontend mentor, frontend, web developer, responsive, mobile first">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon.png">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/products.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/focusable-lightbox.js"></script>
-  <script src="js/main.js" defer></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <link rel="stylesheet" href="sub/css/normalize.css">
+  <link rel="stylesheet" href="sub/css/main.css">
+  <script src="sub/js/products.js"></script>
+  <script src="sub/js/cart.js"></script>
+  <script src="sub/js/focusable-lightbox.js"></script>
+  <script src="sub/js/main.js" defer></script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <title>PRODUCT</title>
 </head>
@@ -59,7 +59,7 @@
         </span>
       </button>
       <button class="user-container" type="button" aria-label="User section">
-        <img src="images/image-avatar.png" alt="" class="user-container__img" role="presentation">
+        <img src="sub/images/image-avatar.png" alt="" class="user-container__img" role="presentation">
       </button>
     </div>
 
@@ -89,43 +89,43 @@
             <span class="sr-only">Next Image</span>
             <span class="icon icon-next" aria-hidden="true"></span>
           </button>
-          <img src="images/chair/chair-1.jpg" alt="Brown and white sneaker" class="image-box__src"
+          <img src="sub/images/chair/chair-1.jpg" alt="Brown and white sneaker" class="image-box__src"
             data-product-id="item-cart-1" tabindex="0" aria-controls="lightbox" aria-expanded="false">
         </div>
 
         <ul class="product__thumbs default-container" aria-label="Product thumbnails">
           <li class="thumb-item">
             <button type="button" class="thumb-item__btn" aria-label="change to image 1">
-              <img src="images/chair/chair-1-thumbnail.jpg" alt="" data-thumb-index="0" role="presentation">
+              <img src="sub/images/chair/chair-1-thumbnail.jpg" alt="" data-thumb-index="0" role="presentation">
             </button>
           </li>
           <li class="thumb-item">
             <button type="button" class="thumb-item__btn" aria-label="change to image 2">
-              <img src="images/chair/chair-2-thumbnail.jpg" alt="" data-thumb-index="1" role="presentation">
+              <img src="sub/images/chair/chair-2-thumbnail.jpg" alt="" data-thumb-index="1" role="presentation">
             </button>
           </li>
           <li class="thumb-item">
             <button type="button" class="thumb-item__btn" aria-label="change to image 3">
-              <img src="images/chair/chair-3-thumbnail.jpg" alt="" data-thumb-index="2" role="presentation">
+              <img src="sub/images/chair/chair-3-thumbnail.jpg" alt="" data-thumb-index="2" role="presentation">
             </button>
           </li>
           <li class="thumb-item">
             <button type="button" class="thumb-item__btn" aria-label="change to image 4">
-              <img src="images/chair/chair-4-thumbnail.jpg" alt="" data-thumb-index="3" role="presentation">
+              <img src="sub/images/chair/chair-4-thumbnail.jpg" alt="" data-thumb-index="3" role="presentation">
             </button>
           </li>
         </ul>
 
         <div style="width: 100%;">
           <model-viewer id="chair"      
-              src="models/chair.glb"
-              poster="images/poster.png"
+              src="sub/models/chair.glb"
+              poster="sub/images/poster.png"
               alt="A 3D model of a chair"
               ar
               ar-scale = 'fixed'
               auto-rotate
               camera-controls 
-            class="model"> <img src="images/qr-code.png" class="qr-code"> 
+            class="model"> <img src="sub/images/qr-code.png" class="qr-code"> 
             <div style="bottom: 5px; left: 5px; position: absolute;"> Size: 
               <select id="size-variant">
                 <option>Original</option>
